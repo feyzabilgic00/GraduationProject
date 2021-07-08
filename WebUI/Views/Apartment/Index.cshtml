@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+
+@model List<Business.ViewModels.Apartment.AddApartmentViewModel>
+
+    <div>
+        <a class="btn btn-info" asp-action="AddApartment" asp-controller="Apartment">Daire Ekle</a>
+    </div>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Blok Adı</th>
+                <th scope="col">Kiracı</th>
+                <th scope="col">Durumu</th>
+                <th scope="col">Daire Tipi</th>
+                <th scope="col">Bulunduğu Kat</th>
+                <th scope="col">Daire Numarası</th>
+                <th scope="col">  </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.BlockName</td>
+                <td>@item.NameSurname</td>
+                <td>@item.Status</td>
+                <td>@item.Type</td>
+                <td>@item.FloorLocation</td>
+                <td>@item.ApartmentNumber</td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Apartment" asp-action="DeleteUser" asp-route-id="@item.Id" role="button">Sil</a>
+                    <a class="btn btn-success" asp-controller="Apartment" asp-action="BringUser" asp-route-id="@item.Id" role="button">Güncelle</a>
+               </td>
+                
+            </tr>
+            }
+        </tbody>
+    </table>

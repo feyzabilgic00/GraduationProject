@@ -1,0 +1,44 @@
+﻿@model UserViewModel
+
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<div class="row">
+
+    <div class="col-md-4 offset-md-4">
+        <h4>Yeni Kişi Ekle</h4>
+        <hr />
+        <form asp-action="SignUp" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameSurname" class="control-label"></label>
+                <input asp-for="NameSurname" class="form-control" />
+                <span asp-validation-for="NameSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TcNo" class="control-label"></label>
+                <input asp-for="TcNo" class="form-control" />
+                <span asp-validation-for="TcNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input placeholder="0555 555 55 55" asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlateNumber" class="control-label"></label>
+                <input asp-for="PlateNumber" class="form-control" />
+                <span asp-validation-for="PlateNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kişi Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

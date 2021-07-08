@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+
+@model BlockViewModel
+
+@{
+    ViewData["Title"] = "AddBlock";
+}
+
+<div class="row">
+
+    <div class="col-md-4 offset-md-4">
+        <h4>Yeni Blok Ekle</h4>
+        <hr />
+        <form asp-action="AddBlock" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BlockName" class="control-label"></label>
+                <input asp-for="BlockName" class="form-control" />
+                <span asp-validation-for="BlockName" class="text-danger"></span>
+            </div>          
+            <div class="form-group">
+                <input type="submit" value="Blok Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

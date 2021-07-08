@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+
+@model List<Business.ViewModels.Block.BlockViewModel>
+
+    <div>
+        <a class="btn btn-info" asp-action="AddBlock" asp-controller="Block">Blok Ekle</a>
+    </div>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Blok Adı</th>
+                <th scope="col">  </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.BlockName</td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Block" asp-action="DeleteBlock" asp-route-id="@item.BlockId" role="button">Sil</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

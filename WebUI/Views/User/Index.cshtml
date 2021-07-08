@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+
+@model List<Business.ViewModels.User.UserViewModel>
+
+    <div>
+        <a class="btn btn-info" asp-action="SignUp" asp-controller="User">Kişi Ekle</a>
+    </div>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Adı Soyadı</th>
+                <th scope="col">Tc Kimlik Numarası</th>
+                <th scope="col">E-Posta</th>
+                <th scope="col">Telefon Numarası</th>
+                <th scope="col">Araç Plakası</th>
+                <th scope="col">  </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.NameSurname</td>
+                <td>@item.TcNo</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.PlateNumber</td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@item.UserId" role="button">Sil</a>
+                    <a class="btn btn-success" asp-controller="Admin" asp-action="BringUser" asp-route-id="@item.UserId" role="button">Güncelle</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

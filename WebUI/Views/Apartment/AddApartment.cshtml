@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+
+@model AddApartmentViewModel
+
+@{
+    ViewData["Title"] = "AddApartment";
+}
+
+<div class="row">
+
+    <div class="col-md-4 offset-md-4">
+        <h4>Yeni Daire Ekle</h4>
+        <hr />
+        <form asp-action="AddApartment" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BlockName" class="control-label">Blok seçiniz</label>
+                @Html.DropDownListFor(b=>b.BlockName, (IEnumerable<SelectListItem>)ViewBag.blocks,new { @class="form-control"})
+            </div>
+            <div class="form-group">
+                <label asp-for="NameSurname" class="control-label"></label>
+                @Html.DropDownListFor(b => b.NameSurname, (IEnumerable<SelectListItem>)ViewBag.users, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FloorLocation" class="control-label"></label>
+                <input asp-for="FloorLocation" class="form-control" />
+                <span asp-validation-for="FloorLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApartmentNumber" class="control-label"></label>
+                <input asp-for="ApartmentNumber" class="form-control" />
+                <span asp-validation-for="ApartmentNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kişi Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
