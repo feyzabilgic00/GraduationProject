@@ -17,8 +17,8 @@ Model sınıflarımız ile tasarım modelimiz arasındaki haritalama işlemleri 
 - Gelen ödeme bilgilerini görür.
 - Gelen mesajları görür.
 - Aylık olarak borç-alacak listesini görür.
-- Kişileri listeler, düzenler, siler.  +
-- Daire/konut bilgilerini listeler, düzenler siler. +
+- Kişileri listeler, düzenler, siler.
+- Daire/konut bilgilerini listeler, düzenler siler.<br>
 2.Kullanıcı
 - Kendisine atanan fatura ve aidat bilgilerini görür.
 - Kredi kartı ile ödeme yapabilir.
