@@ -30,4 +30,10 @@ EntityFramework Core <br>
 AspNetCore Identity<br>
 Automapper<br>
 
+###### Ön Gereklilikler ve Kurulum
+Projeyi kendi bilgisayarınızda çalıştırabilmeniz için öncelikle en güncel dotnet sdk' sının kurulu olması gerekmektedir.
+Veritabanı için MSSQl kullanılmıştır bunun için bilgisayarınızda MsSql kurulum olmalıdır. Tüm bu işlemlerin ardından projede <strong>package manager console</strong> alanından
+<strong>DataAccess</strong> katmanını seçerek migration işlemi yapmanız gereklidir. Öncelikle projenizi <strong>WebUI</strong> alanından <strong>Set As Startup</strong> demeniz gerekiyor.
+Migration işlemi için <strong>add-migration Init</strong> diyerek migration eklemelisiniz. Migration işleminin veritabanına yansıması için ardından <strong>update-database</strong> demeniz gerekir. Ardından projenizi çalıştırabilirsiniz.
+Proje çalıştırıldıktan sonra örn:<strong>localhost://49686/user</strong> yönlendirme olarak <strong>user</strong> yazmanız gereklidir. Ardından sizi yönlendirecek şekilde işlemler sağlanmıştır.
 
